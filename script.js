@@ -5,8 +5,8 @@
 // 1) Pega aquí los datos de tu proyecto Supabase.
 // Usa solamente la Project URL y la Publishable key / anon public key.
 // NUNCA pongas aquí una service_role key ni una secret key.
-const SUPABASE_URL = "https://mwwggiqcguxgfdzioske.supabase.co/rest/v1/";
-const SUPABASE_KEY = "sb_publishable_mY5PqPN43N2ZBGGZo6uKRg_4K9sczjY";
+const SUPABASE_URL = "PEGA_AQUI_TU_PROJECT_URL";
+const SUPABASE_KEY = "PEGA_AQUI_TU_PUBLISHABLE_KEY";
 
 // 2) Datos públicos de ADELuve. Déjalos vacíos hasta tener los reales.
 const CONTACT = {
