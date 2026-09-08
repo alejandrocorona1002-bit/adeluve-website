@@ -1,19 +1,20 @@
+
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="ADELuve · Ingeniería y Consultoría Especializada en Agua. Soluciones técnicas para la calidad y tratamiento del agua." />
+  <meta name="description" content="ADELUUVE · Ingeniería y Consultoría Especializada en Agua. Soluciones técnicas para la calidad y tratamiento del agua." />
   <meta name="theme-color" content="#0b5c75" />
-  <title>ADELuve | Ingeniería y Consultoría Especializada en Agua</title>
+  <title>ADELUUVE | Ingeniería y Consultoría Especializada en Agua</title>
   <link rel="icon" href="assets/logo.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header" id="inicio">
     <div class="container nav-wrap">
-      <a class="brand" href="#inicio" aria-label="ADELuve - Inicio">
-        <img src="assets/logo.png" alt="logo.png" />
+      <a class="brand" href="#inicio" aria-label="ADELUUVE - Inicio">
+        <img src="assets/logo.png" alt="Logo ADELUUVE" />
       </a>
       <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
@@ -23,6 +24,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#metodologia">Metodología</a>
         <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
         <a href="#clientes">Clientes</a>
         <a class="nav-cta" href="#contacto">Contacto</a>
       </nav>
@@ -42,7 +44,7 @@
             <a class="btn btn-primary" href="#servicios">Conocer servicios</a>
             <a class="btn btn-secondary" href="#contacto">Solicitar diagnóstico</a>
           </div>
-          <div class="hero-tags" aria-label="Proceso ADELuve">
+          <div class="hero-tags" aria-label="Proceso ADELUUVE">
             <span>Caracterizamos</span><i></i><span>Diagnosticamos</span><i></i><span>Diseñamos</span><i></i><span>Implementamos</span>
           </div>
         </div>
@@ -76,7 +78,7 @@
           <h2>Ingeniería que parte del problema real.</h2>
         </div>
         <div class="prose reveal">
-          <p><strong>ADELuve</strong> es una firma de ingeniería y consultoría especializada en agua, orientada a identificar problemas de calidad, evaluar sistemas existentes y desarrollar soluciones técnicas de tratamiento y desinfección.</p>
+          <p><strong>ADELUUVE</strong> es una firma de ingeniería y consultoría especializada en agua, orientada a identificar problemas de calidad, evaluar sistemas existentes y desarrollar soluciones técnicas de tratamiento y desinfección.</p>
           <p>Nuestro enfoque integra el muestreo, la interpretación de resultados, el diagnóstico técnico y el diseño de soluciones, buscando que cada proyecto responda a las características reales del agua y a las necesidades del cliente.</p>
         </div>
       </div>
@@ -139,7 +141,7 @@
           <span class="eyebrow">Experiencia y capacidades</span>
           <h2>Una visión integral del agua y sus procesos.</h2>
           <p class="focus-copy">No partimos de una tecnología predeterminada. Primero entendemos el agua, el proceso y el objetivo del cliente; después definimos la solución técnica.</p>
-          <div class="flowline" aria-label="Flujo ADELuve">
+          <div class="flowline" aria-label="Flujo ADELUUVE">
             <b>Problema</b><span>→</span><b>Muestreo</b><span>→</span><b>Análisis</b><span>→</span><b>Diagnóstico</b><span>→</span><b>Diseño</b><span>→</span><b>Solución</b>
           </div>
         </div>
@@ -158,7 +160,7 @@
     <section class="section section-dark" id="por-que">
       <div class="container">
         <div class="section-heading reveal">
-          <span class="eyebrow">¿Por qué ADELuve?</span>
+          <span class="eyebrow">¿Por qué ADELUUVE?</span>
           <h2>Diagnóstico, ingeniería y acompañamiento en un mismo enfoque.</h2>
         </div>
         <div class="why-grid">
@@ -167,6 +169,24 @@
           <article class="why-card reveal"><strong>Visión integral</strong><p>Conectamos análisis, ingeniería, equipos e implementación.</p></article>
           <article class="why-card reveal"><strong>Flexibilidad</strong><p>Adaptamos la solución al caudal, calidad, operación y presupuesto del proyecto.</p></article>
           <article class="why-card reveal"><strong>Acompañamiento técnico</strong><p>Apoyamos al cliente desde la identificación del problema hasta la solución.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="proyectos">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="eyebrow">Trabajos y proyectos</span>
+          <h2>Experiencia que se puede ver.</h2>
+          <p>Una selección de trabajos realizados por ADELUUVE. Las imágenes se cargan desde Supabase para que puedas agregar nuevos proyectos sin modificar el código.</p>
+        </div>
+        <div class="projects-toolbar reveal">
+          <button class="project-filter active" data-filter="todos">Todos</button>
+          <button class="project-filter" data-filter="proyecto">Proyectos</button>
+          <button class="project-filter" data-filter="trabajo">Trabajos</button>
+        </div>
+        <div class="projects-grid" id="projects-grid">
+          <div class="projects-loading">Cargando proyectos...</div>
         </div>
       </div>
     </section>
@@ -231,13 +251,31 @@
     </section>
   </main>
 
+
+  <div class="project-modal" id="project-modal" aria-hidden="true">
+    <button class="project-modal-close" id="project-modal-close" aria-label="Cerrar">×</button>
+    <div class="project-modal-card">
+      <div class="project-modal-media">
+        <img id="project-modal-image" alt="" />
+        <button class="project-modal-nav prev" id="project-modal-prev" aria-label="Imagen anterior">‹</button>
+        <button class="project-modal-nav next" id="project-modal-next" aria-label="Imagen siguiente">›</button>
+        <div class="project-modal-counter" id="project-modal-counter"></div>
+      </div>
+      <div class="project-modal-copy">
+        <span id="project-modal-type"></span>
+        <h3 id="project-modal-title"></h3>
+        <p id="project-modal-description"></p>
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="container footer-grid">
-      <div class="footer-brand"><img src="assets/logo.png" alt="ADELuve" /><p>Ingeniería y Consultoría Especializada en Agua</p></div>
+      <div class="footer-brand"><img src="assets/logo.png" alt="ADELUUVE" /><p>Ingeniería y Consultoría Especializada en Agua</p></div>
       <p>Soluciones técnicas para la calidad y tratamiento del agua.</p>
       <a href="#inicio">Volver arriba ↑</a>
     </div>
-    <div class="container footer-bottom">© <span id="year"></span> ADELuve. Sitio informativo.</div>
+    <div class="container footer-bottom">© <span id="year"></span> ADELUUVE. Sitio informativo.</div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
