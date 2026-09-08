@@ -6,8 +6,8 @@
 // IMPORTANTE: la URL debe terminar en .supabase.co (sin /rest/v1).
 // Usa solamente la Project URL y la Publishable key / anon public key.
 // NUNCA pongas aquí una service_role key ni una secret key.
-const SUPABASE_URL = "sb_publishable_mY5PqPN43N2ZBGGZo6uKRg_4K9sczjY";
-const SUPABASE_KEY = "https://mwwggiqcguxgfdzioske.supabase.co";
+const SUPABASE_URL = "https://mwwggiqcguxgfdzioske.supabase.co";
+const SUPABASE_KEY = "sb_publishable_mY5PqPN43N2ZBGGZo6uKRg_4K9sczjY";
 
 // 2) Datos públicos de ADELUUVE. Déjalos vacíos hasta tener los reales.
 const CONTACT = {
