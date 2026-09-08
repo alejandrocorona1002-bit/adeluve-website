@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -201,16 +202,31 @@
           <h2>Cuéntanos qué necesitas resolver.</h2>
           <p>Comparte la información básica de tu proyecto para preparar una solicitud técnica.</p>
           <div class="contact-data" id="contact-data"></div>
-          <p class="contact-note" id="contact-note">Los datos de teléfono, correo y cobertura no están definidos en el documento base. Puedes configurarlos en <code>script.js</code>.</p>
+          
         </div>
 
         <form class="contact-form reveal" id="contact-form">
-          <label>Nombre<input name="nombre" autocomplete="name" required placeholder="Tu nombre" /></label>
-          <label>Empresa<input name="empresa" autocomplete="organization" placeholder="Empresa u organización" /></label>
-          <label>Correo<input name="correo" type="email" autocomplete="email" placeholder="correo@ejemplo.com" /></label>
-          <label>¿Qué necesitas resolver?<textarea name="mensaje" rows="5" required placeholder="Describe brevemente la fuente, problema o sistema que necesitas evaluar."></textarea></label>
-          <button class="btn btn-primary" type="submit">Preparar solicitud</button>
-          <p class="form-status" id="form-status" role="status"></p>
+          <label>Nombre<input name="nombre" autocomplete="name" required maxlength="120" placeholder="Tu nombre" /></label>
+          <label>Empresa<input name="empresa" autocomplete="organization" maxlength="160" placeholder="Empresa u organización" /></label>
+          <label>Correo<input name="correo" type="email" autocomplete="email" required maxlength="180" placeholder="correo@ejemplo.com" /></label>
+          <label>Teléfono / WhatsApp<input name="telefono" type="tel" autocomplete="tel" maxlength="40" placeholder="Tu número de contacto" /></label>
+          <label>Tipo de servicio
+            <select name="servicio">
+              <option value="">Selecciona una opción</option>
+              <option value="Diagnóstico de calidad del agua">Diagnóstico de calidad del agua</option>
+              <option value="Muestreo y análisis">Muestreo y análisis</option>
+              <option value="Diseño de sistemas de desinfección">Diseño de sistemas de desinfección</option>
+              <option value="Revisión de sistemas de desinfección">Revisión de sistemas de desinfección</option>
+              <option value="Potabilización de agua de río">Potabilización de agua de río</option>
+              <option value="Revisión de proyectos de potabilización">Revisión de proyectos de potabilización</option>
+              <option value="Evaluación técnica de descargas">Evaluación técnica de descargas</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </label>
+          <label>¿Qué necesitas resolver?<textarea name="mensaje" rows="5" required maxlength="3000" placeholder="Describe brevemente la fuente, problema o sistema que necesitas evaluar."></textarea></label>
+          <input class="hp-field" type="text" name="sitio_web" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button class="btn btn-primary" id="submit-contact" type="submit">Enviar solicitud</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -225,6 +241,7 @@
     <div class="container footer-bottom">© <span id="year"></span> ADELuve. Sitio informativo.</div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
 </body>
 </html>
