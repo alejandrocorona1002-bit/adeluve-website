@@ -1,17 +1,41 @@
-# ADELUUVE — versión actualizada
+# ADELUUVE — versión premium
 
-## Antes de publicar
-1. Abre `script.js`.
-2. Reemplaza `PEGA_AQUI_TU_PROJECT_URL` por tu URL base de Supabase, por ejemplo `https://xxxx.supabase.co`. **No agregues `/rest/v1`.**
-3. Reemplaza `PEGA_AQUI_TU_PUBLISHABLE_KEY` por tu Publishable key / anon key.
-4. Sube `index.html`, `styles.css`, `script.js` y la carpeta `assets` a GitHub.
-5. Vercel desplegará automáticamente si ya está conectado al repositorio.
+## Archivos a subir a GitHub
+- `index.html`
+- `styles.css`
+- `script.js`
+- carpeta `assets/` con `logo.png`
 
-## Proyectos
-La web lee `public.proyectos`. Una imagen principal se toma de `imagen_url`.
+## Antes de subir
+En `script.js`, reemplaza:
 
-## Varias imágenes por proyecto
-Ejecuta una sola vez `SQL_IMAGENES_MULTIPLES.sql`. Después agrega filas en `proyecto_imagenes`, usando el `id` del proyecto en `proyecto_id`. La web detecta esa tabla automáticamente y muestra un carrusel.
+```js
+const SUPABASE_URL = "PEGA_AQUI_TU_PROJECT_URL";
+const SUPABASE_KEY = "PEGA_AQUI_TU_PUBLISHABLE_KEY";
+```
 
-## Contactos
-Los formularios se guardan en `Table Editor > contactos`.
+por la misma Project URL y Publishable/anon key que ya usas.
+
+## Esta versión conserva
+- formulario a tabla `contactos`
+- tabla `proyectos`
+- tabla opcional `proyecto_imagenes`
+- galería y filtros
+- modal con varias imágenes
+
+## Mejoras visuales
+- `Quiénes somos` es la primera sección visible
+- portada completamente nueva
+- navegación activa por sección
+- barra de progreso de página
+- animaciones reveal, flotación, burbujas y ondas
+- metodología animada
+- galería tipo editorial/mosaico
+- carrusel con miniaturas, teclado y swipe móvil
+- diseño responsive más completo
+
+## Publicación
+1. Reemplaza los archivos en GitHub.
+2. Commit changes.
+3. Vercel detectará el commit y desplegará automáticamente.
+4. Haz Ctrl+F5 cuando termine el deployment.
