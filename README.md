@@ -1,27 +1,17 @@
-# Sitio web ADELuve
+# ADELUUVE — versión actualizada
 
-Sitio estático (HTML + CSS + JavaScript) creado a partir de la presentación corporativa proporcionada.
+## Antes de publicar
+1. Abre `script.js`.
+2. Reemplaza `PEGA_AQUI_TU_PROJECT_URL` por tu URL base de Supabase, por ejemplo `https://xxxx.supabase.co`. **No agregues `/rest/v1`.**
+3. Reemplaza `PEGA_AQUI_TU_PUBLISHABLE_KEY` por tu Publishable key / anon key.
+4. Sube `index.html`, `styles.css`, `script.js` y la carpeta `assets` a GitHub.
+5. Vercel desplegará automáticamente si ya está conectado al repositorio.
 
-## Archivos
-- `index.html`: estructura y contenido.
-- `styles.css`: diseño responsive, colores y animaciones.
-- `script.js`: menú, animaciones y configuración de contacto.
-- `assets/logo.png`: logo extraído del documento base.
+## Proyectos
+La web lee `public.proyectos`. Una imagen principal se toma de `imagen_url`.
 
-## Configurar contacto
-En `script.js`, completa:
+## Varias imágenes por proyecto
+Ejecuta una sola vez `SQL_IMAGENES_MULTIPLES.sql`. Después agrega filas en `proyecto_imagenes`, usando el `id` del proyecto en `proyecto_id`. La web detecta esa tabla automáticamente y muestra un carrusel.
 
-```js
-const CONTACT = {
-  phone: "",
-  email: "",
-  location: ""
-};
-```
-
-No se inventaron teléfono, correo ni cobertura porque esos campos estaban vacíos en el documento original.
-
-## Publicar fuera de Google
-Puedes subir esta carpeta tal cual a Netlify, Vercel, Cloudflare Pages o cualquier hosting de sitios estáticos.
-
-Para una publicación sencilla, arrastra la carpeta completa (o el ZIP) al proveedor que elijas.
+## Contactos
+Los formularios se guardan en `Table Editor > contactos`.
