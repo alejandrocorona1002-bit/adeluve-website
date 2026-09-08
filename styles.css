@@ -60,3 +60,34 @@ h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2.9rem,5.4vw,5.4rem);line-height:1.01
 @media (max-width:1020px){.nav{position:absolute;top:82px;left:20px;right:20px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;display:none;flex-direction:column;align-items:stretch;box-shadow:var(--shadow)}.nav.open{display:flex}.menu-toggle{display:block}.hero-grid,.two-col,.contact-grid{grid-template-columns:1fr;gap:48px}.hero{min-height:auto}.hero-visual{min-height:460px}.problem-grid{grid-template-columns:repeat(2,1fr)}.service-grid{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:1fr 1fr}.timeline::before{display:none}.why-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:680px){.container{width:min(100% - 28px,1180px)}.nav-wrap{height:72px}.brand img{width:145px}.nav{top:72px}.hero-grid{padding:70px 0}.hero-copy>p{font-size:1.02rem}.hero-visual{padding:20px;min-height:430px}.mini-grid{grid-template-columns:1fr 1fr}.section{padding:78px 0}.problem-grid,.service-grid,.timeline,.why-grid{grid-template-columns:1fr}.problem-card{min-height:auto}.step{padding-top:66px}.timeline .step{border-bottom:1px solid var(--line)}.contact-form{padding:20px}.footer-grid{grid-template-columns:1fr;gap:20px}blockquote{font-size:2rem}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn,.service-card{transition:none}}
+
+/* Formulario conectado a Supabase */
+.contact-form select{
+  width:100%;
+  border:1px solid #ccdde2;
+  border-radius:14px;
+  padding:13px 14px;
+  font:inherit;
+  color:var(--ink);
+  background:#fbfdfd;
+  outline:none;
+}
+.contact-form select:focus{
+  border-color:var(--blue-2);
+  box-shadow:0 0 0 4px rgba(22,135,165,.1);
+}
+.contact-form button:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+  transform:none;
+}
+.form-status.success{color:#28744c;font-weight:700}
+.form-status.error{color:#a43737;font-weight:700}
+.hp-field{
+  position:absolute!important;
+  left:-9999px!important;
+  width:1px!important;
+  height:1px!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
