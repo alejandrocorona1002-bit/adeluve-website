@@ -3,302 +3,105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ADELUUVE | Ingeniería y Consultoría Especializada en Agua</title>
-  <meta name="description" content="ADELUUVE · Ingeniería y Consultoría Especializada en Agua. Soluciones técnicas para la calidad y tratamiento del agua." />
+  <title>ADELUUVE | Administración</title>
   <meta name="theme-color" content="#063f5c" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="ADELUUVE | Ingeniería y Consultoría Especializada en Agua" />
-  <meta property="og:description" content="Soluciones técnicas para la calidad y tratamiento del agua." />
-  <meta property="og:image" content="assets/logo.png" />
-
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
 </head>
 <body>
-  <div class="page-progress" id="page-progress" aria-hidden="true"></div>
-  <div class="ambient ambient-a" aria-hidden="true"></div>
-  <div class="ambient ambient-b" aria-hidden="true"></div>
-
-  <header class="site-header" id="inicio">
-    <div class="container nav-wrap">
-      <a class="brand" href="#nosotros" aria-label="ADELUUVE - Inicio">
-        <img src="assets/logo.png" alt="Logo ADELUUVE" />
-      </a>
-
-      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav" id="nav-menu" aria-label="Navegación principal">
-        <a href="#nosotros" class="active">Quiénes somos</a>
-        <a href="#problemas">Qué resolvemos</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#metodologia">Metodología</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#por-que">¿Por qué ADELUUVE?</a>
-        <a href="#clientes">Clientes</a>
-        <a class="nav-cta" href="#contacto">Contacto</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="nosotros">
-      <div class="bubble bubble-1" aria-hidden="true"></div>
-      <div class="bubble bubble-2" aria-hidden="true"></div>
-      <div class="bubble bubble-3" aria-hidden="true"></div>
-
-      <div class="container hero-grid">
-        <div class="hero-copy reveal from-left">
-          <span class="eyebrow">¿Quiénes somos?</span>
-          <h1>
-            <span class="serif">ADELUUVE</span>
-            <small>Ingeniería y Consultoría Especializada en Agua</small>
-          </h1>
-          <p class="hero-lead">
-            ADELUUVE es una firma de ingeniería y consultoría especializada en agua, orientada a identificar problemas de calidad, evaluar sistemas existentes y desarrollar soluciones técnicas de tratamiento y desinfección.
-          </p>
-          <p class="hero-sub">
-            Nuestro enfoque integra el muestreo, la interpretación de resultados, el diagnóstico técnico y el diseño de soluciones, buscando que cada proyecto responda a las características reales del agua y a las necesidades del cliente.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#servicios">Conocer servicios <span>↗</span></a>
-            <a class="btn btn-secondary" href="#proyectos">Ver proyectos</a>
-          </div>
-          <div class="hero-signature" aria-label="Proceso ADELUUVE">
-            <span>Caracterizamos</span>
-            <span>Diagnosticamos</span>
-            <span>Diseñamos</span>
-            <span>Implementamos</span>
-          </div>
-        </div>
-
-        <div class="hero-visual reveal from-right">
-          <div class="hero-logo-card">
-            <img src="assets/logo.png" alt="Logo ADELUUVE" />
-          </div>
-          <div class="hero-glass-card">
-            <div class="hero-card-head"><span class="status-dot"></span><small>Nuestro enfoque</small></div>
-            <h2>Diagnóstico antes de diseñar</h2>
-            <p>No partimos de una tecnología predeterminada. Primero entendemos el agua, el proceso y el objetivo del cliente; después definimos la solución técnica.</p>
-            <div class="hero-process-grid" aria-label="Problema, muestreo, análisis, diagnóstico, diseño y solución">
-              <div><b>01</b><span>Problema</span></div>
-              <div><b>02</b><span>Muestreo</span></div>
-              <div><b>03</b><span>Análisis</span></div>
-              <div><b>04</b><span>Diagnóstico</span></div>
-              <div><b>05</b><span>Diseño</span></div>
-              <div><b>06</b><span>Solución</span></div>
-            </div>
-          </div>
-          <svg class="hero-wave" viewBox="0 0 800 260" aria-hidden="true">
-            <path d="M0 130 C145 30 245 230 410 120 S680 30 800 125 L800 260 L0 260Z" fill="currentColor" opacity=".18"></path>
-            <path d="M0 165 C160 65 265 250 435 150 S680 80 800 170" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" opacity=".55"></path>
-          </svg>
-        </div>
-      </div>
-
-      <a class="scroll-hint" href="#problemas" aria-label="Continuar"><span></span>Conocer más</a>
-    </section>
-
-    <section class="section section-soft" id="problemas">
-      <div class="container">
-        <div class="section-heading centered reveal">
-          <span class="eyebrow">¿Qué problemas resolvemos?</span>
-          <h2>¿Qué problemas resolvemos?</h2>
-        </div>
-        <div class="problem-grid stagger-group">
-          <article class="problem-card reveal"><span class="problem-number">01</span><div class="problem-icon">◉</div><p>Necesidad de conocer la calidad real de una fuente de abastecimiento.</p></article>
-          <article class="problem-card reveal"><span class="problem-number">02</span><div class="problem-icon">≋</div><p>Agua de río o fuente superficial que requiere potabilización.</p></article>
-          <article class="problem-card reveal"><span class="problem-number">03</span><div class="problem-icon">⌁</div><p>Sistemas de desinfección que no alcanzan el desempeño esperado.</p></article>
-          <article class="problem-card reveal"><span class="problem-number">04</span><div class="problem-icon">⌬</div><p>Necesidad de seleccionar, dimensionar o revisar un sistema de tratamiento.</p></article>
-          <article class="problem-card reveal"><span class="problem-number">05</span><div class="problem-icon">↯</div><p>Problemas o dudas técnicas relacionadas con descargas de aguas residuales.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="servicios">
-      <div class="container">
-        <div class="section-heading centered reveal">
-          <span class="eyebrow">Servicios principales</span>
-          <h2>Servicios principales</h2>
-        </div>
-        <div class="service-grid">
-          <article class="service-card reveal"><span class="service-index">01</span><div class="service-icon">◌</div><h3>Diagnóstico de calidad del agua</h3><p>Caracterización e interpretación de la calidad del agua para identificar riesgos, necesidades de tratamiento y alternativas técnicas.</p></article>
-          <article class="service-card reveal"><span class="service-index">02</span><div class="service-icon">⌁</div><h3>Muestreo y análisis</h3><p>Planeación y ejecución de muestreos, con análisis mediante laboratorios que cuenten con las acreditaciones aplicables. Integración e interpretación de resultados.</p></article>
-          <article class="service-card reveal"><span class="service-index">03</span><div class="service-icon">✦</div><h3>Diseño y revisión de sistemas de desinfección</h3><p>Selección y dimensionamiento de tecnologías de desinfección de acuerdo con caudal, calidad del agua y objetivos de tratamiento. Evaluación de instalaciones existentes para identificar deficiencias de operación, capacidad, dosificación, contacto o configuración.</p></article>
-          <article class="service-card reveal"><span class="service-index">04</span><div class="service-icon">⌘</div><h3>Revisión de proyectos de potabilización</h3><p>Revisión técnica de memorias, criterios de diseño, capacidades y configuración de procesos para detectar inconsistencias y oportunidades de mejora.</p></article>
-          <article class="service-card reveal"><span class="service-index">05</span><div class="service-icon">↳</div><h3>Evaluación técnica de descargas</h3><p>Caracterización de la descarga, identificación de posibles problemas y definición de recomendaciones técnicas para su manejo o tratamiento.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section methodology-section" id="metodologia">
-      <div class="methodology-bg" aria-hidden="true"></div>
-      <div class="container">
-        <div class="section-heading centered light reveal">
-          <span class="eyebrow">Nuestra metodología</span>
-          <h2>Caracterizar · Diagnosticar · Diseñar · Implementar · Verificar</h2>
-        </div>
-        <div class="methodology-track">
-          <div class="track-line" aria-hidden="true"><span id="track-progress"></span></div>
-          <article class="method-step reveal"><div class="method-node">01</div><h3>Caracterizar</h3><p>Definimos el problema, fuente, caudal, condiciones de operación y parámetros de interés.</p></article>
-          <article class="method-step reveal"><div class="method-node">02</div><h3>Diagnosticar</h3><p>Interpretamos la información disponible y determinamos las causas y necesidades técnicas.</p></article>
-          <article class="method-step reveal"><div class="method-node">03</div><h3>Diseñar</h3><p>Desarrollamos la alternativa de tratamiento, desinfección o solución más adecuada.</p></article>
-          <article class="method-step reveal"><div class="method-node">04</div><h3>Implementar</h3><p>Apoyamos la selección de equipos, especificaciones e implementación de la solución.</p></article>
-          <article class="method-step reveal"><div class="method-node">05</div><h3>Verificar</h3><p>Damos seguimiento técnico al desempeño y proponemos ajustes cuando sean necesarios.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section project-section" id="proyectos">
-      <div class="container">
-        <div class="section-heading split-heading reveal">
-          <div><span class="eyebrow">Trabajos y proyectos</span><h2>Trabajos y proyectos</h2></div>
-          <div class="projects-heading-side">
-            <div class="project-filters" role="group" aria-label="Filtrar proyectos">
-              <button class="project-filter active" type="button" data-filter="todos">Todos</button>
-              <button class="project-filter" type="button" data-filter="proyecto">Proyectos</button>
-              <button class="project-filter" type="button" data-filter="trabajo">Trabajos</button>
-            </div>
-          </div>
-        </div>
-        <div class="projects-grid" id="projects-grid" aria-live="polite">
-          <div class="projects-skeleton" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experiencia">
-      <div class="container experience-layout">
-        <div class="experience-copy reveal from-left">
-          <span class="eyebrow">Experiencia y capacidades</span>
-          <h2>Experiencia y capacidades</h2>
-          <p class="experience-intro">No partimos de una tecnología predeterminada. Primero entendemos el agua, el proceso y el objetivo del cliente; después definimos la solución técnica.</p>
-          <div class="focus-flow" aria-label="Nuestro enfoque">
-            <span>Problema</span><i>→</i><span>Muestreo</span><i>→</i><span>Análisis</span><i>→</i><span>Diagnóstico</span><i>→</i><span>Diseño</span><i>→</i><span>Solución</span>
-          </div>
-        </div>
-        <div class="capability-panel reveal from-right">
-          <ul class="capability-list">
-            <li><span>01</span>Diseño y revisión de sistemas de potabilización y tratamiento de agua.</li>
-            <li><span>02</span>Sistemas de desinfección y selección de equipos.</li>
-            <li><span>03</span>Potabilización de agua proveniente de fuentes superficiales.</li>
-            <li><span>04</span>Evaluación técnica de aguas residuales y descargas.</li>
-            <li><span>05</span>Tratamiento y aprovechamiento de aguas con características particulares, incluyendo aguas termales.</li>
-            <li><span>06</span>Evaluación de alternativas para la remoción de contaminantes específicos, incluyendo hidrocarburos.</li>
-            <li><span>07</span>Muestreo, diagnóstico de calidad del agua e interpretación de resultados analíticos.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section why-section" id="por-que">
-      <div class="container">
-        <div class="section-heading centered reveal"><span class="eyebrow">¿Por qué ADELUUVE?</span><h2>¿Por qué ADELUUVE?</h2></div>
-        <div class="why-grid">
-          <article class="why-card reveal"><span>01</span><h3>Especialización</h3><p>Nuestro enfoque está concentrado en agua y tratamiento.</p></article>
-          <article class="why-card reveal"><span>02</span><h3>Diagnóstico antes de diseñar</h3><p>Las soluciones se sustentan en las características reales del agua.</p></article>
-          <article class="why-card reveal"><span>03</span><h3>Visión integral</h3><p>Conectamos análisis, ingeniería, equipos e implementación.</p></article>
-          <article class="why-card reveal"><span>04</span><h3>Flexibilidad</h3><p>Adaptamos la solución al caudal, calidad, operación y presupuesto del proyecto.</p></article>
-          <article class="why-card reveal"><span>05</span><h3>Acompañamiento técnico</h3><p>Apoyamos al cliente desde la identificación del problema hasta la solución.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section clients-section" id="clientes">
-      <div class="container">
-        <div class="section-heading reveal"><span class="eyebrow">Perfil de clientes</span><h2>Perfil de clientes</h2></div>
-        <div class="client-grid">
-          <div class="client-pill reveal"><span>01</span>Organismos operadores de agua potable y saneamiento</div>
-          <div class="client-pill reveal"><span>02</span>Constructoras y empresas de infraestructura</div>
-          <div class="client-pill reveal"><span>03</span>Despachos de ingeniería y consultoría ambiental</div>
-          <div class="client-pill reveal"><span>04</span>Industrias y establecimientos con necesidades de tratamiento de agua</div>
-          <div class="client-pill reveal"><span>05</span>Empresas integradoras y proveedores de equipos de tratamiento y desinfección</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="statement-section">
-      <div class="container statement-card reveal">
-        <span class="statement-label">ADELUUVE en una frase</span>
-        <blockquote>“Si tienes un problema con el agua, te ayudamos a saber qué tiene, qué necesita y cómo solucionarlo.”</blockquote>
-        <a href="#contacto" class="statement-link">Contacto <span>→</span></a>
-      </div>
-    </section>
-
-    <section class="section contact-section" id="contacto">
-      <div class="container contact-grid">
-        <div class="contact-copy reveal from-left">
-          <span class="eyebrow">Contacto</span>
-          <h2>ADELUUVE</h2>
-          <p>Ingeniería y Consultoría Especializada en Agua</p>
-          <div class="contact-data" id="contact-data"></div>
-        </div>
-
-        <form class="contact-form reveal from-right" id="contact-form" novalidate>
-          <div class="form-head"><span>Contacto</span><small>Campos con * son obligatorios</small></div>
-          <div class="form-row">
-            <label>Nombre *<input name="nombre" autocomplete="name" required maxlength="120" placeholder="Tu nombre" /></label>
-            <label>Empresa<input name="empresa" autocomplete="organization" maxlength="160" placeholder="Empresa u organización" /></label>
-          </div>
-          <div class="form-row">
-            <label>Correo *<input name="correo" type="email" autocomplete="email" required maxlength="180" placeholder="correo@ejemplo.com" /></label>
-            <label>Teléfono / WhatsApp<input name="telefono" type="tel" autocomplete="tel" maxlength="40" placeholder="Número de contacto" /></label>
-          </div>
-          <label>Tipo de servicio
-            <select name="servicio">
-              <option value="">Selecciona una opción</option>
-              <option value="Diagnóstico de calidad del agua">Diagnóstico de calidad del agua</option>
-              <option value="Muestreo y análisis">Muestreo y análisis</option>
-              <option value="Diseño y revisión de sistemas de desinfección">Diseño y revisión de sistemas de desinfección</option>
-              <option value="Revisión de proyectos de potabilización">Revisión de proyectos de potabilización</option>
-              <option value="Evaluación técnica de descargas">Evaluación técnica de descargas</option>
-            </select>
-          </label>
-          <label>¿Qué necesitas resolver? *<textarea name="mensaje" rows="6" required maxlength="4000" placeholder="Describe brevemente tu solicitud."></textarea></label>
-          <label class="honeypot" aria-hidden="true">Sitio web<input name="sitio_web" tabindex="-1" autocomplete="off" /></label>
-          <button class="btn btn-primary submit-btn" id="submit-contact" type="submit"><span>Enviar solicitud</span><b>→</b></button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+  <main class="admin-root">
+    <section class="login-screen" id="login-screen">
+      <div class="login-card">
+        <img src="../assets/logo.png" alt="ADELUUVE" />
+        <span>Administración</span>
+        <h1>Acceso</h1>
+        <form id="login-form">
+          <label>Correo<input id="login-email" type="email" required autocomplete="email" /></label>
+          <label>Contraseña<input id="login-password" type="password" required autocomplete="current-password" /></label>
+          <button type="submit">Ingresar</button>
+          <p id="login-status" role="status"></p>
         </form>
+      </div>
+    </section>
+
+    <section class="admin-shell hidden" id="admin-shell">
+      <aside class="sidebar">
+        <a class="admin-brand" href="../index.html"><img src="../assets/logo.png" alt="ADELUUVE" /></a>
+        <nav>
+          <button class="side-link active" data-view="dashboard">Resumen</button>
+          <button class="side-link" data-view="proyectos">Proyectos</button>
+          <button class="side-link" data-view="contactos">Solicitudes</button>
+        </nav>
+        <button id="logout-btn" class="logout-btn">Cerrar sesión</button>
+      </aside>
+
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div><span>ADELUUVE</span><h1 id="view-title">Resumen</h1></div>
+          <div class="top-actions"><a href="../index.html" target="_blank" rel="noopener">Ver sitio ↗</a><span id="admin-email"></span></div>
+        </header>
+
+        <section class="view active" id="view-dashboard">
+          <div class="metric-grid">
+            <article><span>Solicitudes nuevas</span><b id="metric-new">—</b></article>
+            <article><span>En seguimiento</span><b id="metric-follow">—</b></article>
+            <article><span>Finalizadas</span><b id="metric-done">—</b></article>
+            <article><span>Proyectos publicados</span><b id="metric-projects">—</b></article>
+          </div>
+          <div class="panel"><div class="panel-head"><div><span>Últimas solicitudes</span><h2>Actividad reciente</h2></div></div><div id="recent-contacts" class="mini-list"></div></div>
+        </section>
+
+        <section class="view" id="view-proyectos">
+          <div class="panel">
+            <div class="panel-head"><div><span>Portafolio</span><h2>Proyectos y trabajos</h2></div><button id="new-project-btn" class="primary-btn">+ Nueva publicación</button></div>
+            <div id="admin-projects" class="admin-projects"></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-contactos">
+          <div class="panel">
+            <div class="panel-head"><div><span>Contacto</span><h2>Solicitudes recibidas</h2></div><select id="contact-filter"><option value="todos">Todos</option><option value="Nuevo">Nuevo</option><option value="Contactado">Contactado</option><option value="En seguimiento">En seguimiento</option><option value="Cotización">Cotización</option><option value="Finalizado">Finalizado</option></select></div>
+            <div id="admin-contacts" class="contact-list"></div>
+          </div>
+        </section>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand"><img src="assets/logo.png" alt="Logo ADELUUVE" /><p>Ingeniería y Consultoría Especializada en Agua</p></div>
-      <div class="footer-links"><a href="#nosotros">Quiénes somos</a><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a></div>
-      <a class="back-top" href="#nosotros">Volver arriba ↑</a>
+  <div class="drawer" id="project-drawer" aria-hidden="true">
+    <div class="drawer-card">
+      <button class="drawer-close" id="project-drawer-close">×</button>
+      <span class="drawer-kicker">Publicación</span><h2 id="project-form-title">Nueva publicación</h2>
+      <form id="project-form">
+        <input type="hidden" id="project-id" />
+        <label>Título *<input id="project-title" required maxlength="180" /></label>
+        <label>Tipo<select id="project-type"><option value="Proyecto">Proyecto</option><option value="Trabajo">Trabajo</option></select></label>
+        <label>Descripción<textarea id="project-description" rows="6" maxlength="4000"></textarea></label>
+        <label class="check-row"><input id="project-published" type="checkbox" checked /> Publicado</label>
+        <label>Agregar imágenes<input id="project-images" type="file" accept="image/*" multiple /></label>
+        <div id="existing-images" class="existing-images"></div>
+        <button class="primary-btn" id="save-project-btn" type="submit">Guardar publicación</button>
+        <p id="project-form-status" role="status"></p>
+      </form>
     </div>
-    <div class="container footer-bottom">© <span id="year"></span> ADELUUVE. Sitio informativo.</div>
-  </footer>
+  </div>
 
-  <div class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
-    <div class="project-modal-shell">
-      <button class="project-modal-close" id="project-modal-close" type="button" aria-label="Cerrar">×</button>
-      <div class="project-modal-media" id="project-modal-media">
-        <img id="project-modal-image" src="" alt="" />
-        <button class="project-modal-arrow prev" id="project-modal-prev" type="button" aria-label="Imagen anterior">‹</button>
-        <button class="project-modal-arrow next" id="project-modal-next" type="button" aria-label="Imagen siguiente">›</button>
-        <span class="project-modal-counter" id="project-modal-counter"></span>
-      </div>
-      <div class="project-modal-copy">
-        <span id="project-modal-type"></span>
-        <h3 id="project-modal-title"></h3>
-        <p id="project-modal-description"></p>
-        <div class="project-thumbs" id="project-thumbs"></div>
-      </div>
+  <div class="drawer" id="contact-drawer" aria-hidden="true">
+    <div class="drawer-card">
+      <button class="drawer-close" id="contact-drawer-close">×</button>
+      <span class="drawer-kicker">Solicitud</span><h2 id="contact-detail-name">—</h2>
+      <div id="contact-detail" class="contact-detail"></div>
+      <label>Estatus<select id="contact-status"><option>Nuevo</option><option>Contactado</option><option>En seguimiento</option><option>Cotización</option><option>Finalizado</option></select></label>
+      <button class="primary-btn" id="save-contact-status">Guardar estatus</button>
+      <p id="contact-detail-status" role="status"></p>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="config.js"></script>
-  <script src="script.js"></script>
+  <script src="../config.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>
