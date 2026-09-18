@@ -18,12 +18,13 @@
         <img src="../assets/logo.png" alt="ADELUUVE" />
         <span>Administración</span>
         <h1>Acceso</h1>
-        <form id="login-form">
-          <label>Correo<input id="login-email" type="email" required autocomplete="email" /></label>
-          <label>Contraseña<input id="login-password" type="password" required autocomplete="current-password" /></label>
-          <button type="submit">Ingresar</button>
-          <p id="login-status" role="status"></p>
-        </form>
+        <p class="login-help">Inicia sesión con una cuenta autorizada para administrar ADELUUVE.</p>
+        <div class="admin-social-login">
+          <button id="admin-google-login" type="button"><span>G</span> Continuar con Google</button>
+          <button id="admin-apple-login" class="apple" type="button"><span>●</span> Continuar con Apple</button>
+        </div>
+        <p id="login-status" role="status"></p>
+        <a class="back-site-login" href="../index.html">← Volver al sitio</a>
       </div>
     </section>
 

@@ -9,6 +9,131 @@ function safeUrl(v=""){try{const u=new URL(v);return ["https:","http:"].includes
 const isSupabaseConfigured=SUPABASE_URL&&SUPABASE_KEY&&!SUPABASE_URL.includes("PEGA_AQUI")&&!SUPABASE_KEY.includes("PEGA_AQUI");
 const supabaseClient=isSupabaseConfigured&&window.supabase?window.supabase.createClient(SUPABASE_URL.replace(/\/+$/, ""),SUPABASE_KEY):null;
 
+// ============================================================
+// AUTENTICACIÓN OPCIONAL
+// ============================================================
+const authLoginBtn=$("#auth-login-btn"),authLoginLabel=$("#auth-login-label"),authModal=$("#auth-modal"),
+  authModalClose=$("#auth-modal-close"),authGoogle=$("#auth-google"),authApple=$("#auth-apple"),
+  authStatus=$("#auth-status"),accountMenu=$("#account-menu"),accountName=$("#account-name"),
+  accountEmail=$("#account-email"),accountAvatar=$("#account-avatar"),accountAdminLink=$("#account-admin-link"),
+  accountSignout=$("#account-signout");
+
+let currentAuthUser=null;
+let currentUserIsAdmin=false;
+
+function setAuthStatus(text="",ok=false){
+  if(!authStatus)return;
+  authStatus.textContent=text;
+  authStatus.classList.toggle("success",!!ok);
+}
+function openAuthModal(){
+  if(!authModal)return;
+  setAuthStatus("");
+  authModal.classList.add("open");
+  authModal.setAttribute("aria-hidden","false");
+  document.body.classList.add("modal-open");
+}
+function closeAuthModal(){
+  authModal?.classList.remove("open");
+  authModal?.setAttribute("aria-hidden","true");
+  document.body.classList.remove("modal-open");
+}
+async function checkCurrentUserAdmin(){
+  currentUserIsAdmin=false;
+  if(!supabaseClient||!currentAuthUser)return false;
+  try{
+    const {data,error}=await supabaseClient.rpc("es_administrador");
+    if(error)throw error;
+    currentUserIsAdmin=!!data;
+  }catch(err){
+    console.info("No fue posible verificar el rol administrador:",err?.message||err);
+  }
+  accountAdminLink?.classList.toggle("hidden",!currentUserIsAdmin);
+  return currentUserIsAdmin;
+}
+function userDisplayName(user){
+  return normalize(user?.user_metadata?.full_name)
+    || normalize(user?.user_metadata?.name)
+    || normalize(user?.email?.split("@")[0])
+    || "Mi cuenta";
+}
+async function renderAuthSession(session){
+  currentAuthUser=session?.user||null;
+  currentUserIsAdmin=false;
+  accountMenu?.classList.remove("open");
+  accountMenu?.setAttribute("aria-hidden","true");
+
+  if(!currentAuthUser){
+    authLoginBtn?.classList.remove("signed-in");
+    if(authLoginLabel)authLoginLabel.textContent="Iniciar sesión";
+    accountAdminLink?.classList.add("hidden");
+    if(accountEmail)accountEmail.textContent="";
+    return;
+  }
+
+  const name=userDisplayName(currentAuthUser);
+  const initial=(name.trim()[0]||"A").toUpperCase();
+  authLoginBtn?.classList.add("signed-in");
+  if(authLoginLabel)authLoginLabel.textContent=name;
+  if(accountName)accountName.textContent=name;
+  if(accountEmail)accountEmail.textContent=currentAuthUser.email||"";
+  if(accountAvatar)accountAvatar.textContent=initial;
+  await checkCurrentUserAdmin();
+}
+async function oauthLogin(provider){
+  if(!supabaseClient){
+    setAuthStatus("Configura Supabase en config.js.");
+    return;
+  }
+  setAuthStatus("Abriendo inicio de sesión...");
+  try{
+    const redirectTo=`${window.location.origin}${window.location.pathname}`;
+    const {error}=await supabaseClient.auth.signInWithOAuth({provider,options:{redirectTo}});
+    if(error)throw error;
+  }catch(err){
+    console.error("OAuth:",err);
+    setAuthStatus(err?.message||"No fue posible iniciar sesión.");
+  }
+}
+
+authLoginBtn?.addEventListener("click",()=>{
+  if(!currentAuthUser){openAuthModal();return}
+  const open=!accountMenu?.classList.contains("open");
+  accountMenu?.classList.toggle("open",open);
+  accountMenu?.setAttribute("aria-hidden",String(!open));
+});
+authModalClose?.addEventListener("click",closeAuthModal);
+authModal?.addEventListener("click",e=>{if(e.target===authModal)closeAuthModal()});
+authGoogle?.addEventListener("click",()=>oauthLogin("google"));
+authApple?.addEventListener("click",()=>oauthLogin("apple"));
+accountSignout?.addEventListener("click",async()=>{
+  await supabaseClient?.auth.signOut();
+  accountMenu?.classList.remove("open");
+});
+document.addEventListener("click",e=>{
+  if(!accountMenu||!authLoginBtn)return;
+  if(!accountMenu.contains(e.target)&&!authLoginBtn.contains(e.target)){
+    accountMenu.classList.remove("open");
+    accountMenu.setAttribute("aria-hidden","true");
+  }
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){
+    if(authModal?.classList.contains("open"))closeAuthModal();
+    accountMenu?.classList.remove("open");
+  }
+});
+async function initPublicAuth(){
+  if(!supabaseClient)return;
+  const {data}=await supabaseClient.auth.getSession();
+  await renderAuthSession(data.session);
+  supabaseClient.auth.onAuthStateChange((_event,session)=>{
+    setTimeout(()=>renderAuthSession(session),0);
+  });
+}
+initPublicAuth();
+
+
 const header=$(".site-header"),menuBtn=$(".menu-toggle"),nav=$(".nav"),progressBar=$("#page-progress");
 menuBtn?.addEventListener("click",()=>{const open=nav.classList.toggle("open");menuBtn.setAttribute("aria-expanded",String(open))});
 $$('.nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn?.setAttribute('aria-expanded','false')}));

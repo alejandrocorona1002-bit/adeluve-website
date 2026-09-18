@@ -71,3 +71,28 @@ Después de cada actualización usa `Ctrl + F5` si el navegador conserva archivo
 
 ## 8. Dominio / SEO
 Hasta que exista un dominio definitivo, este paquete no fija `canonical` ni `sitemap.xml` para no inventar una URL. Cuando el dominio esté definido se agregan ambos con la dirección real.
+
+
+## Inicio de sesión opcional
+
+La página pública muestra **Iniciar sesión** en la parte superior derecha.
+
+- El visitante puede usar toda la página sin iniciar sesión.
+- Google y Apple se autentican mediante Supabase Auth.
+- Un cliente autenticado no ve herramientas administrativas.
+- `alejandrocorona1002@gmail.com` queda autorizado como administrador al ejecutar `SETUP_COMPLETO.sql`.
+- Al iniciar sesión con esa cuenta, el menú de cuenta muestra **Panel de administración**.
+- `/admin/` también valida el rol en Supabase; no basta con conocer la URL.
+
+### Configurar Google
+Supabase → Authentication → Sign In / Providers → Google.
+Configura el Client ID y Client Secret de Google.
+
+### Configurar Apple
+Supabase → Authentication → Sign In / Providers → Apple.
+El login web de Apple requiere configuración adicional en Apple Developer.
+
+### URLs de retorno
+Supabase → Authentication → URL Configuration:
+- Site URL: URL pública de producción.
+- Redirect URLs: agrega la URL de producción y las URLs de preview de Vercel que necesites.

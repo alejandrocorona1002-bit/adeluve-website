@@ -204,3 +204,37 @@ using (bucket_id = 'proyectos' and public.es_administrador());
 -- 2) Copia su UUID.
 -- 3) Ejecuta, sustituyendo TU_UUID:
 -- insert into public.administradores(user_id) values ('TU_UUID');
+
+
+-- ============================================================
+-- ADMINISTRADOR PRINCIPAL ADELUUVE
+-- Se autoriza en base de datos, no mediante JavaScript público.
+-- ============================================================
+create or replace function public.registrar_admin_principal()
+returns trigger
+language plpgsql
+security definer
+set search_path = public, auth
+as $$
+begin
+  if lower(coalesce(new.email, '')) = 'alejandrocorona1002@gmail.com' then
+    insert into public.administradores(user_id)
+    values (new.id)
+    on conflict (user_id) do nothing;
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists adeluuve_admin_principal_trigger on auth.users;
+
+create trigger adeluuve_admin_principal_trigger
+after insert or update of email on auth.users
+for each row
+execute function public.registrar_admin_principal();
+
+insert into public.administradores(user_id)
+select id
+from auth.users
+where lower(email) = 'alejandrocorona1002@gmail.com'
+on conflict (user_id) do nothing;
